@@ -1,4 +1,4 @@
-"""moduloB URL Configuration
+"""posgrados_unicauca_backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,8 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('a_projects_app.urls')),
+    path('', include('a_students_app.urls')),
+    path('', include('all_reports_app.urls')),
+    path('', include('b_activities_app.urls')),
+    path('', include('c_tracking_app.urls')),
+    path('', include('d_accounts_app.urls')),
+    path('', include('d_information_management_app.urls'))
 ]
