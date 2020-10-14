@@ -27,9 +27,9 @@ class parcipacionProyectoAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(ponencia_congreso)
+admin.site.register(ponenciaCongreso)
 admin.site.register(publicacion)
 admin.site.register(curso)
-admin.site.register(exposicion_resultados)
-admin.site.register(estancia_investigacion)
-admin.site.register(parcipacion_proyecto)
+admin.site.register(exposicionResultados)
+admin.site.register(estanciaInvestigacion)
+admin.site.register(parcipacionProyecto)

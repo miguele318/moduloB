@@ -5,19 +5,19 @@ from django.contrib.auth.models import User        # TODO: Actualizar usuario a 
 
 
 class actividad(models.Model):
-    id_actividad=models.AutoField(primary_key=True)
+    idActividad=models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=50)
     nombre = models.CharField(max_length=50)
-    id_estudiante = models.PositiveIntegerField() # models.ForeignKey(User, on_delete=models.CASCADE) #TODO: Actualizar usuario a estudiante
+    idEstudiante = models.PositiveIntegerField() # models.ForeignKey(User, on_delete=models.CASCADE) #TODO: Actualizar usuario a estudiante
     descripcion = models.CharField(max_length=50)
     justificante = models.FileField(upload_to="b_activities_app/archivos", null=True, blank=True)
     estado = models.CharField(max_length=20)
-    fecha_inicio = models.DateTimeField()
-    fecha_fin = models.DateTimeField()
+    fechaInicio = models.DateTimeField()
+    fechaFin = models.DateTimeField()
 
 
-class ponencia_congreso(actividad):
-    entidad_organizadora=models.CharField(max_length=50)
+class ponenciaCongreso(actividad):
+    entidadOrganizadora=models.CharField(max_length=50)
     #Lugar=     #TODO: Relacionar con ciudad
 
     class Meta:
@@ -30,7 +30,7 @@ class ponencia_congreso(actividad):
 class publicacion(actividad):
     tipo=models.CharField(max_length=50)
     autores=models.CharField(max_length=50)
-    datos_generales=models.CharField(max_length=50)
+    datosGenerales=models.CharField(max_length=50)
 
     class Meta:
         verbose_name='Publicacion'
@@ -41,7 +41,7 @@ class publicacion(actividad):
 
 class curso(actividad):
     programa=models.CharField(max_length=50)
-    horas_asignadas=models.PositiveIntegerField()
+    horasAsignadas=models.PositiveIntegerField()
 
     class Meta:
         verbose_name='Curso'
@@ -50,7 +50,7 @@ class curso(actividad):
     def __str__(self):
         return self.nombre
 
-class estancia_investigacion(actividad):
+class estanciaInvestigacion(actividad):
     proposito=models.CharField(max_length=50)
     institucion=models.CharField(max_length=50)
     responsable=models.CharField(max_length=50)
@@ -63,7 +63,7 @@ class estancia_investigacion(actividad):
     def __str__(self):
         return self.nombre
 
-class exposicion_resultados(actividad):
+class exposicionResultados(actividad):
     modalidad=models.CharField(max_length=50)
     duracion=models.PositiveIntegerField()
     lugar=models.CharField(max_length=50)
@@ -74,9 +74,9 @@ class exposicion_resultados(actividad):
     def __str__(self):
         return self.nombre
 
-class parcipacion_proyecto(actividad):
-    nombre_investigador=models.CharField(max_length=50)
-    informacion_vri=models.CharField(max_length=50)
+class parcipacionProyecto(actividad):
+    nombreInvestigador=models.CharField(max_length=50)
+    informacionVRI=models.CharField(max_length=50)
     lugar=models.CharField(max_length=50)
 
     class Meta:
