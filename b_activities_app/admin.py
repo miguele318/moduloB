@@ -21,10 +21,12 @@ class parcipacionProyectoAdmin(admin.ModelAdmin):
     readonly_fields=('created','updated')
 '''
 
-admin.site.register(ponenciaCongreso)
-admin.site.register(publicacion)
-admin.site.register(curso)
-admin.site.register(exposicionResultados)
-admin.site.register(estanciaInvestigacion)
-admin.site.register(parcipacionProyecto)
-admin.site.register(premio)
+admin.site.register([
+    ponenciaCongreso,
+    publicacion,
+    curso,
+    exposicionResultados,
+    estanciaInvestigacion,
+    parcipacionProyecto,
+    premio
+])
