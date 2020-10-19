@@ -101,3 +101,15 @@ class premio(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class control_matricula(models.Model):
+    id_matricula = models.AutoField(primary_key = True)
+    identificacion = models.PositiveIntegerField(blank=False, null=False)
+    periodo_matricula = models.CharField(max_length = 20, blank = False, null = False)
+
+    class Meta:
+        verbose_name='Control Matricula'
+        verbose_name_plural='Controles Matricula'
+
+    def __str__(self):
+        return self.periodo_matricula

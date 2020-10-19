@@ -28,3 +28,5 @@ admin.site.register(exposicionResultados)
 admin.site.register(estanciaInvestigacion)
 admin.site.register(parcipacionProyecto)
 admin.site.register(premio)
+
+admin.site.register(control_matricula)
