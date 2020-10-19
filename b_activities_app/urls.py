@@ -8,9 +8,16 @@ from .views import *
 
 router = routers.DefaultRouter()
 
+router.register('ponenciaCongreso', PonenciaCongresoViewSet)
+router.register('publicacion', PublicacionViewSet)
 router.register('curso', CursoViewSet)
+router.register('estanciaInvestigacion', EstanciaInvestigacionViewSet)
+router.register('exposicionResultados', ExposicionResultadosViewSet)
+router.register('parcipacionProyecto', ParcipacionProyectoViewSet)
+router.register('premio', PremioViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls))
 ]
+
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
