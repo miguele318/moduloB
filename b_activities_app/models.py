@@ -112,4 +112,4 @@ class control_matricula(models.Model):
         verbose_name_plural='Controles Matricula'
 
     def __str__(self):
-        return self.periodo_matricula
+        return str(self.identificacion) + " - " + self.periodo_matricula

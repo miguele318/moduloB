@@ -28,5 +28,7 @@ admin.site.register([
     exposicionResultados,
     estanciaInvestigacion,
     parcipacionProyecto,
-    premio
+    premio,
+
+    control_matricula
 ])

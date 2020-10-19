@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'd_information_management_app',
     # COMPLEMENTO DE EXTERNOS
     'rest_framework',
+    'corsheaders',
     'knox',
 ]
 
@@ -65,6 +66,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'posgrados_unicauca_backend.urls'
@@ -134,6 +137,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+       'https://localhost:3000',
+)
 
 # CONFIGURACIÓN DE LOS ARCHIVOS STATICS (templates para envio de emails) Y MEDIA (imagenes)
 STATIC_URL = "/static/"
