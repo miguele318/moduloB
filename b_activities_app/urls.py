@@ -18,7 +18,7 @@ router.register('exposicionResultados', ExposicionResultadosViewSet)
 router.register('parcipacionProyecto', ParcipacionProyectoViewSet)
 router.register('premio', PremioViewSet)
 
-router.register(r'periodo', control_matriculaViewSet, basename='control_matricula')
+router.register('periodo', control_matriculaViewSet, basename='control_matricula')
 
 urlpatterns = [
     path('api/', include(router.urls))

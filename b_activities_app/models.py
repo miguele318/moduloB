@@ -16,6 +16,9 @@ class actividad(models.Model):
     anio_academico = models.CharField(max_length=20, blank=False, null=False)
     tipo = models.CharField(max_length=50, blank=False, null=False)
 
+    def __str__(self):
+        return self.nombre
+
 class ponenciaCongreso(actividad):
     id_ins = models.PositiveIntegerField() #TODO: Relacionar con institucion (EntidadOrganizadora)
     lugar = models.CharField(max_length=50, blank=False, null=False)
